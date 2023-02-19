@@ -1,0 +1,24 @@
+untapped_dbt:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 4
+      host: winhost
+      port: 5432
+      user: dbt_dev_user
+      pass: dbt_dev_user
+      dbname: postgres
+      schema: dbt_dev
+
+    prod:
+      type: postgres
+      threads: 4
+      host: winhost
+      port: 5432
+      user: dbt_prod_user
+      pass: dbt_prod_user
+      dbname: postgres
+      schema: dbt_prod
+
+  target: dev

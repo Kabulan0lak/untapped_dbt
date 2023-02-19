@@ -1,0 +1,25 @@
+
+
+============================== 2023-02-19 10:56:02.716252 | 6e698a84-422e-4a47-9094-4f7e6d994981 ==============================
+10:56:02.716258 [info ] [MainThread]: Running with dbt=1.1.0
+10:56:02.716509 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/home/tbk/.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+10:56:02.716609 [debug] [MainThread]: Tracking: tracking
+10:56:02.723020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb7fbefa00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb7fbef8e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb7fbef970>]}
+10:56:13.706656 [debug] [MainThread]: Starter project path: /home/tbk/.local/lib/python3.8/site-packages/dbt/include/starter_project
+10:56:21.964131 [info ] [MainThread]: 
+Your new dbt project "untapped_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+10:56:21.964447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb7da25520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb7fbef820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb7fbef580>]}

@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: asaak
+    database: postgres
+    schema: asaak
+    tables:
+      - name: borrowers
+        loaded_at_field: insert_timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 2, period: day}
+      - name: collateral
+        loaded_at_field: insert_timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 2, period: day}
+      - name: installments
+        loaded_at_field: insert_timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 2, period: day}
+      - name: loans
+        loaded_at_field: insert_timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 2, period: day}
+      - name: payments
+        loaded_at_field: insert_timestamp
+        freshness:
+          warn_after: {count: 1, period: day}
+          error_after: {count: 2, period: day}
+      
