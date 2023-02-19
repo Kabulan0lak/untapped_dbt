@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: countries
+    description: Country metadata
+    columns:
+      - name: alpha_3
+        tests:
+            - unique
+            - not_null
+  - name: companies
+    description: Company metadata
+    columns:
+      - name: company_id
+        tests:
+            - unique
+            - not_null
+      - name: company_name
+      - name: country_id_std

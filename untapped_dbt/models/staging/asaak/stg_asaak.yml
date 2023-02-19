@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: stg_loans
+    description: Loans metadata
+    columns: 
+      - name: loan_id
+        description: the pk for stg_loans
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: Reference to the borrower this loan is attached to
+        tests:
+          - relationships:
+              to: ref('stg_borrowers')
+              field: user_id
+
+  - name: stg_collateral
+    description: Collateral metadata
+    columns:
+      - name: asset_id
+        description: the pk for stg_collateral
+        tests:
+          - unique
+          - not_null
+      - name: loan_id
+        description: Reference to the loan this collateral is attached to
+        tests:
+          - relationships:
+              to: ref('stg_loans')
+              field: loan_id
+
+  - name: stg_borrowers
+    description: Borrowers metadata
+    columns:
+      - name: user_id
+        description: the pk for stg_borrowers
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_payments
+    description: Payments data
+    columns:
+      - name: payment_id
+        description: the pk for stg_payments
+        tests:
+          - unique
+          - not_null
+      - name: loan_id
+        description: Reference to the loan this payment is attached to
+        tests:
+          - relationships:
+              to: ref('stg_loans')
+              field: loan_id
+
+  - name: stg_installments
+    description: Installments data
+    columns:
+      - name: installment_id
+        description: the pk for stg_installments
+        tests:
+          - unique
+          - not_null
+      - name: loan_id
+        description: Reference to the loan this installment is attached to
+        tests:
+          - relationships:
+              to: ref('stg_loans')
+              field: loan_id
