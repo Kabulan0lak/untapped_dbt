@@ -12,7 +12,7 @@ ranked as (
         id,
         collateral_name,
         loan,
-        RANK() over (partition by id order by acquisition_timestamp desc) as rnk
+        RANK() over (partition by id order by acquisition_timestamp desc, insert_timestamp desc) as rnk
 
     from source
 

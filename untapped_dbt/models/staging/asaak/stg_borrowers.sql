@@ -8,7 +8,7 @@ ranked as (
     select
         id,
         borrower_name,
-        RANK() over (partition by id order by acquisition_timestamp desc) as rnk
+        RANK() over (partition by id order by acquisition_timestamp desc, insert_timestamp desc) as rnk
         
     from source
 ),

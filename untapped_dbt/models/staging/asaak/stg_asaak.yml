@@ -69,3 +69,11 @@ models:
           - relationships:
               to: ref('stg_loans')
               field: loan_id
+      - name: payment_id
+        description: Reference to the payment this installment is attached to
+        tests:
+          - relationships:
+              to: ref('stg_payments')
+              field: payment_id
+              config:
+                severity: warn

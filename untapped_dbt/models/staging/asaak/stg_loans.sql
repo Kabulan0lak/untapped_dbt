@@ -16,7 +16,7 @@ ranked as (
         amount,
         interest_rate,
         start_date,
-        RANK() over (partition by id order by acquisition_timestamp desc) as rnk
+        RANK() over (partition by id order by acquisition_timestamp desc, insert_timestamp desc) as rnk
 
     from source
 
