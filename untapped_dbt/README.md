@@ -44,5 +44,5 @@ Position yourself in the `untapped_dbt/untapped_dbt` directory, and run:
 dbt build
 ```
 
-Every model should run, every test shoud pass. 
-You can the newly created tables and views in your dbt_dev_user environment
+Every model should run, every test shoud pass except the foreign key on payment_id from installments table that gives 11k unidentified payments.
+You can see the newly created tables and views in your dbt_dev_user environment.
