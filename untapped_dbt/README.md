@@ -1,15 +1,48 @@
-Welcome to your new dbt project!
+## Untapped technical test: DBT
 
-### Using the starter project
+### Install dbt
 
-Try running the following commands:
-- dbt run
-- dbt test
+DBT runs in a Python environment. First make sure your environment is good to go. Then install DBT for postgres using:
+```bash
+pip install dbt-postgres
+```
 
+### Set up config file
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+Launch a `dbt init` wherever you want to initiate your setup. Follow the insctruction on prompt, but your choices don't really matter.
+A `profiles.yml` file should have been created in this location `~/.dbt/`
+
+Edit it to match your postgres instance credentials:
+```yaml
+untapped_dbt:
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: <host>
+      port: <port>
+      user: dbt_dev_user
+      pass: dbt_dev_user
+      dbname: postgres
+      schema: dbt_dev
+    prod:
+      type: postgres
+      threads: 4
+      host: <host>
+      port: <port>
+      user: dbt_prod_user
+      pass: dbt_prod_user
+      dbname: postgres
+      schema: dbt_prod
+  target: dev
+```
+
+### Run it
+
+Position yourself in the `untapped_dbt/untapped_dbt` directory, and run:
+```bash
+dbt build
+```
+
+Every model should run, every test shoud pass. 
+You can the newly created tables and views in your dbt_dev_user environment
